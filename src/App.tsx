@@ -12,7 +12,7 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/undergraduate" element={<Undergraduate/>}/>
+      <Route path="/undergraduate.tsx" element={<Undergraduate/>}/>
       <Route path="/masters" element={<Masters/>}/>
       <Route path="/general" element={<General/>}/>
     </Routes>
