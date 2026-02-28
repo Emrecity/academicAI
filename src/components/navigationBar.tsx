@@ -23,11 +23,11 @@ const navigationBar = () => {
     },
     {
       name: "PhD",
-      link: "#contact",
+      link: "/undergraduate",
     },
     {
       name: "Postdoc",
-      link: "#contact",
+      link: "/undergraduate",
     },
     {
       name: "General",
