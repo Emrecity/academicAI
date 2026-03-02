@@ -10,28 +10,29 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import { routes } from "@/helpers/routes";
 
 const navigationBar = () => {
      const navItems = [
     {
       name: "Undergraduate",
-      link: "/undergraduate",
+      link: `${routes.undergraduate}`,
     },
     {
       name: "Masters",
-      link: "/masters",
+      link: `${routes.masters}`,
     },
     {
       name: "PhD",
-      link: "/undergraduate",
+      link:`${routes.phd}`,
     },
     {
       name: "Postdoc",
-      link: "/undergraduate",
+      link: `${routes.phd}`,
     },
     {
       name: "General",
-      link: "/general",
+      link: `${routes.general}`,
     },
   ];
  

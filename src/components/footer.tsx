@@ -1,7 +1,7 @@
 
 const footer = () => {
   return (
-    <div className="bg-slate-200 w-screen p-5">
+    <div className="bg-slate-200 w-vw-screen p-5 rounded-sm">
         <div className="grid sm:grid-cols-3  sm:w-[85%] mx-auto  gap-5">
             <div>
                 <h1 className="text-xl font-semibold">Applicant</h1>

@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { useNavigate} from "react-router-dom";
+import { routes } from "@/helpers/routes";
 
 export default function HeroSectionOne() {
+  const navigate = useNavigate()
   return (
     <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
       <div className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
@@ -74,7 +77,7 @@ export default function HeroSectionOne() {
           }}
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <button className="w-60 transform rounded-lg bg-slate-500 px-6 py-2 font-medium  text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-700 dark:bg-yellow-200 dark:text-black dark:hover:bg-gray-200">
+          <button onClick={()=>navigate(routes.general)!} className="w-60 transform rounded-lg bg-slate-500 px-6 py-2 font-medium  text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-700 dark:bg-yellow-200 dark:text-black dark:hover:bg-gray-200">
             Create my CV
           </button>
           <button className="w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
@@ -107,8 +110,7 @@ export default function HeroSectionOne() {
             <img
               src='/hero_image.jpeg'
               alt="landing page image"
-              className="aspect-[16/10] h-auto w-full"
-              height={100}
+              className=" min-h-auto w-full object-cover"
               width={100}
             />
           </div>
