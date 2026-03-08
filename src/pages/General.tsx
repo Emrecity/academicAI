@@ -1,5 +1,6 @@
 import { SparklesCore } from "@/components/ui/sparkles"
 import { useState } from "react"
+import { motion } from "framer-motion"
 
 const General = () => {
 
@@ -30,7 +31,11 @@ const General = () => {
                 <h1 className="text-lg sm:text-3xl text-slate-500 font-bold mb-5">General CV</h1>
                  <small className="font-medium text-blue-700">{page} <i className="text-slate-500">of 4</i></small>
             </div>
-            {page==1 && <section className="relative z-10">
+            {page==1 && <motion.section
+            initial={{opacity:0,scale:0.2}}
+            whileInView={{ opacity:1,scale:1}}
+            transition={{damping:0.5, delay:0.2}}
+            className="relative z-10">
                 <div className="grid sm:grid-cols-2 gap-5 sm:gap-x-10 my-5">
                     <div>
                         <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Personal Information</h1>
@@ -88,15 +93,111 @@ const General = () => {
             <div onClick={()=>handleNext()} className="btn-primary  text-center place-self-center">
               <button className="text-white rounded hover:uppercase" >Save & Continue</button>
             </div>
-            </section>}
+            </motion.section>}
 
-            {page==2 &&<section className="relative z-10">
-                <h1>Hello page {page}</h1>
+            {page==2 &&<motion.section
+            initial={{opacity:0,scale:0.2}}
+            whileInView={{ opacity:1,scale:1,rotate:360}}
+            transition={{damping:1, delay:0.2,duration:0.5}}
+            className="relative z-10">
+                <div className="grid sm:grid-cols-2 gap-5 sm:gap-x-10 my-5">
+
+              <div>
+            <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Experience</h1>
+            <div className="grid grid-rows-2 border-y-2 p-2 rounded-2xl my-2"> 
+              <label htmlFor="position" className="text-neutral-500 font-bold">Position *</label>
+              <input type="text" id="position" name="position" className="outline-none" required/>
+            </div>
+            <div className="grid grid-rows-2 border-y-2 p-2 rounded-2xl my-2"> 
+              <label htmlFor="organizationName" className="text-neutral-500 font-bold">Organization Name *</label>
+              <input type="text" id="organizationName" name="organizationName" className="outline-none" required/>
+            </div>
+            <div className="grid grid-rows-2 border-y-2 p-2 rounded-2xl my-2"> 
+              <label htmlFor="organizationaddress" className="text-neutral-500 font-bold">Organization address *</label>
+              <input type="text" id="organizationaddress" name="organizationaddress" className="outline-none" required/>
+            </div>
+            <div className="grid grid-rows-2 border-y-2 p-2 rounded-2xl my-2"> 
+              <label htmlFor="startDate" className="text-neutral-500 font-bold">Start Date *</label>
+              <input type="date" id="startDate" name="startDate" className="outline-none" required/>
+            </div>
+            <div className="grid grid-rows-2 border-y-2 p-2 rounded-2xl my-2"> 
+              <label htmlFor="endDate" className="text-neutral-500 font-bold">End Date *</label>
+              <input type="date" id="endDate" name="endDate" className="outline-none" required/>
+            </div>
+          </div>
+
+          <div>
+            <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Experience Activites</h1>
+              <div className="grid grid-rows-2 border-y-2 gap-y-3 p-2 rounded-2xl my-2"> 
+                <label htmlFor="activite" className="text-neutral-500 font-bold">Activity*</label>
+                <input type="text" id="activite" name="activite" className="outline-none" required/>
+                <button className="w-full btn-primary">Add</button>
+              </div>
+              <div>
+                <h1 className="text-slate-600 font-medium text-center text-shadow-md shadow-sky-300" >List Here</h1>
+              </div>
+              <button className="flex bottom-0 place-self-end btn-secondary mt-10">Additional Experience</button>
+          </div>
+
+        </div>
                 <div className="flex justify-center-safe gap-x-5 mt-10">
                     <button onClick={()=>handleBack()} className="btn-tertiary" >Back</button>
                     <button onClick={()=>handleNext()}  className="btn-primary" >Save & Continue</button>
                 </div>
-            </section>}
+            </motion.section>}
+
+            {page==3 && <motion.section
+            initial={{opacity:0,scale:0.2}}
+            whileInView={{ opacity:1,scale:1,rotate:360}}
+            transition={{damping:1, delay:0.2,duration:0.5}}
+            className="relative z-10">
+              <div className="grid sm:grid-cols-3 gap-5 sm:gap-x-10 my-5">
+                 <div>
+                    <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Technical Skills</h1>
+                      <div className="grid grid-rows-2 border-y-2 gap-y-3 p-2 rounded-2xl my-2"> 
+                        <label htmlFor="activite" className="text-neutral-500 font-bold">Title*</label>
+                        <input type="text" id="activite" name="activite" className="outline-none" required/>
+                        <button className="w-full btn-primary">Add</button>
+                      </div>
+                      <div>
+                        <h1 className="text-slate-600 font-medium text-center text-shadow-md shadow-sky-300" >List Here</h1>
+                      </div>
+                  </div>
+                 <div>
+                    <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Languages</h1>
+                      <div className="grid grid-rows-2 border-y-2 gap-y-3 p-2 rounded-2xl my-2"> 
+                        <label htmlFor="activite" className="text-neutral-500 font-bold">Title*</label>
+                        <input type="text" id="activite" name="activite" className="outline-none" required/>
+                        <button className="w-full btn-primary">Add</button>
+                      </div>
+                      <div>
+                        <h1 className="text-slate-600 font-medium text-center text-shadow-md shadow-sky-300" >List Here</h1>
+                      </div>
+                  </div>
+                 <div>
+                    <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Interests</h1>
+                      <div className="grid grid-rows-2 border-y-2 gap-y-3 p-2 rounded-2xl my-2"> 
+                        <label htmlFor="activite" className="text-neutral-500 font-bold">Title*</label>
+                        <input type="text" id="activite" name="activite" className="outline-none" required/>
+                        <button className="w-full btn-primary">Add</button>
+                      </div>
+                      <div>
+                        <h1 className="text-slate-600 font-medium text-center text-shadow-md shadow-sky-300" >List Here</h1>
+                      </div>
+                  </div>
+                
+              </div>
+              <div className="flex justify-center-safe gap-x-5">
+                <button onClick={()=>handleBack()} className="btn-tertiary" >Back</button>
+                <button onClick={()=>handleNext()}  className="btn-primary" >Save & Continue</button>
+              </div>
+              </motion.section>}
+
+            {page==4 && <section className="relative z-10">
+              <div className="flex justify-center-safe gap-x-5">
+                <button onClick={()=>handleBack()} className="btn-tertiary" >Back</button>
+              </div>
+              </section>}
 
     </form>
 

@@ -7,6 +7,8 @@ import Footer from "./components/footer"
 import General from "./pages/General"
 import NotFound from "./pages/NotFound"
 import {routes} from './helpers/routes'
+import About from "./pages/About"
+import Phd from "./pages/Phd"
 function App() {
 
   return (
@@ -18,6 +20,8 @@ function App() {
       <Route path={routes.masters} element={<Masters/>}/>
       <Route path={routes.general} element={<General/>}/>
       <Route path={routes.notFound} element={<NotFound/>}/>
+      <Route path={routes.about} element={<About/>}/>
+      <Route path={routes.phd} element={<Phd/>}/>
     </Routes>
     <Footer/>
     </div>

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { SparklesCore } from "@/components/ui/sparkles";
+import { motion} from "framer-motion"
 
 const Undergraduate = () => {
   const [page,setPage] = useState(1)
@@ -28,7 +29,11 @@ const Undergraduate = () => {
         <h1 className="text-lg sm:text-3xl text-slate-500 font-bold mb-5">Undergraduate CV</h1>
         <small className="font-medium text-blue-700">{page} <i className="text-slate-500">of 6</i></small>
       </div>
-        {page==1 && <section className="relative z-10">
+        {page==1 && <motion.section 
+        initial={{opacity:0,scale:3}}
+        whileInView={{ opacity:1,scale:1}}
+        transition={{damping:0.5, duration:0.5}}
+        className="relative z-10">
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-x-10 my-5">
 
           <div>
@@ -79,10 +84,14 @@ const Undergraduate = () => {
           </div>
           <div onClick={()=>handleNext()} className="btn-primary text-center place-self-center">
               <button className="text-white rounded" >Save & Continue</button>
-            </div>
-        </section>}
+          </div>
+        </motion.section>}
 
-        {page==2 && <section className="relative z-10">
+        {page==2 && <motion.section
+        initial={{opacity:0,scale:3}}
+        whileInView={{ opacity:1,scale:1}}
+        transition={{damping:0.5, duration:0.5}}
+        className="relative z-10">
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-x-10 my-5">
             <div>
             <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Education</h1>
@@ -138,9 +147,13 @@ const Undergraduate = () => {
               <button onClick={()=>handleBack()} className="btn-tertiary" >Back</button>
               <button onClick={()=>handleNext()}  className="btn-primary" >Save & Continue</button>
             </div>
-          </section>}
+          </motion.section>}
 
-        {page==3 && <section className="relative z-10">   
+        {page==3 && <motion.section
+        initial={{opacity:0,scale:3}}
+        whileInView={{ opacity:1,scale:1}}
+        transition={{damping:0.5, duration:0.5}}
+        className="relative z-10">   
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-x-10 my-5">
 
               <div>
@@ -177,6 +190,7 @@ const Undergraduate = () => {
             <div>
               <h1 className="text-slate-600 font-medium text-center text-shadow-md shadow-sky-300" >List Here</h1>
             </div>
+             <button className="flex bottom-0 place-self-end btn-secondary mt-10">Additional Experience</button>
           </div>
 
         </div>
@@ -184,9 +198,13 @@ const Undergraduate = () => {
               <button onClick={()=>handleBack()} className="btn-tertiary" >Back</button>
               <button onClick={()=>handleNext()}  className="btn-primary" >Save & Continue</button>
         </div>
-          </section>}
+          </motion.section>}
 
-        {page==4 && <section className="relative z-10">      
+        {page==4 && <motion.section
+        initial={{opacity:0,scale:3}}
+        whileInView={{ opacity:1,scale:1}}
+        transition={{damping:0.5, duration:0.5}}
+        className="relative z-10">      
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-x-10 my-5">
               <div>
             <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Professional Service</h1>
@@ -218,6 +236,7 @@ const Undergraduate = () => {
             <div>
               <h1 className="text-slate-600 font-medium text-center text-shadow-md shadow-sky-300" >List Here</h1>
             </div>
+             <button className="flex bottom-0 place-self-end btn-secondary mt-10">Additional Experience</button>
           </div>
 
         </div>
@@ -225,9 +244,13 @@ const Undergraduate = () => {
               <button onClick={()=>handleBack()} className="btn-tertiary" >Back</button>
               <button onClick={()=>handleNext()}  className="btn-primary" >Save & Continue</button>
         </div>
-          </section>}
+          </motion.section>}
 
-        {page==5 && <section className="relative z-10">
+        {page==5 && <motion.section
+        initial={{opacity:0,scale:3}}
+        whileInView={{ opacity:1,scale:1}}
+        transition={{damping:0.5, duration:0.5}}
+             className="relative z-10">
            <div className="mb-10">
             <h1 className="text-slate-600 text-lg font-medium text-center shadow-sm shadow-sky-300" >Language</h1>
               <div className="grid grid-rows-2 border-y-2 gap-y-3 p-2 rounded-2xl my-2"> 
@@ -278,7 +301,7 @@ const Undergraduate = () => {
               <button onClick={()=>handleBack()} className="btn-tertiary" >Back</button>
               <button onClick={()=>handleNext()}  className="btn-primary" >Save & Continue</button>
         </div>
-          </section>}
+          </motion.section>}
 
         {page==6 && <section className="relative z-10">
           <div className="flex justify-center-safe gap-x-5">

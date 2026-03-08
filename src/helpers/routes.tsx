@@ -4,5 +4,6 @@ export const  routes = {
     masters:'/masters',
     phd:'/phd',
     general:'/general',
+    about:'/about',
     notFound:'*',
 }

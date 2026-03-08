@@ -27,10 +27,6 @@ const navigationBar = () => {
       link:`${routes.phd}`,
     },
     {
-      name: "Postdoc",
-      link: `${routes.phd}`,
-    },
-    {
       name: "General",
       link: `${routes.general}`,
     },
